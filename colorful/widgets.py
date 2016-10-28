@@ -44,12 +44,12 @@ class ColorFieldWidget(TextInput):
 
     def render(self, name, value, attrs={}):
         parts = []
+        attrs['style'] = "width: 100px"
         if 'id' not in attrs:
             attrs['id'] = "id_%s" % name
         if self.colors:
             attrs['list'] = 'datalist_for_%s' % attrs['id']
             parts.append(self.render_datalist(attrs['list']))
-        attrs['style'] = "width: 50px"
         parts.append(super(ColorFieldWidget, self).render(name, value, attrs))
         parts.append(self.render_script(attrs['id']))
         return mark_safe(''.join(parts))
