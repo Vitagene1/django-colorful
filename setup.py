@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
-import colorful
-
 setup(
     name='django-colorful',
     version='1.0.0',
